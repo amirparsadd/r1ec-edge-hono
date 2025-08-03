@@ -1,0 +1,19 @@
+{
+  "name": "r1ec-edge-hono",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --target=es2020 --format=esm --outfile=dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "hono": "^4.8.12"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.8"
+  }
+}
