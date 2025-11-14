@@ -65,7 +65,7 @@ export default {
 npm run build
 ```
 
-This will generate a bundled `dist/index.js` using `esbuild`, ready for edge deployment.
+This will generate a bundled `dist/index.js` using `rollup`, ready for edge deployment.
 
 ### 4. Deploy with ArvanCloud CLI
 
@@ -105,11 +105,14 @@ Response:
 ```
 r1c-edge-hono
 ├── src/
-│   └── index.ts       # Hono app source code
+│   └── index.ts # Hono app source code
 ├── dist/
-│   └── index.js      # Bundled deployable output
+│   ├── index.js # Bundled deployable output
+│   └── bundle-analysis.html # Bundled analysis
 ├── package.json
 ├── README.md
+├── rollup.config.js
+├── tsconfig.json
 └── LICENSE.md
 ```
 
