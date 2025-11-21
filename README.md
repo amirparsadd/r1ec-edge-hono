@@ -112,6 +112,7 @@ r1c-edge-hono
 ├── package.json
 ├── README.md
 ├── rollup.config.js
+├── PROJECTNAME.txt # The name of the project used for deploying
 ├── tsconfig.json
 └── LICENSE.md
 ```
