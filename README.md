@@ -26,38 +26,7 @@ npm install
 
 ### 2. Develop the API
 
-The main logic lives in `src/index.ts`:
-
-```ts
-import { Hono } from 'hono'
-import { basicAuth } from 'hono/basic-auth'
-import { cors } from 'hono/cors'
-
-export const app = new Hono()
-
-app.use(cors())
-
-app.get('/', (c) => c.json({ message: 'Hello World' }))
-
-app.get(
-  '/secret',
-  basicAuth({
-    username: 'admin',
-    password: 'admin',
-  }),
-  (c) => {
-    return c.text('This is a secret!')
-  }
-)
-
-// Make it compatible with R1Cloud Edge
-export default {
-  async fetch(request: Request) {
-    return app.fetch(request)
-  }
-}
-
-```
+The main logic lives in `src/index.ts`
 
 ### 3. Build for deployment
 
@@ -97,27 +66,6 @@ Response:
 ```json
 { "message":"Hello World" }
 ```
-
----
-
-## 📁 Project Structure
-
-```
-r1c-edge-hono
-├── src/
-│   └── index.ts # Hono app source code
-├── dist/
-│   ├── index.js # Bundled deployable output
-│   └── bundle-analysis.html # Bundled analysis
-├── package.json
-├── README.md
-├── rollup.config.js
-├── PROJECTNAME.txt # The name of the project used for deploying
-├── tsconfig.json
-└── LICENSE.md
-```
-
----
 
 ## 🧠 How It Works
 
